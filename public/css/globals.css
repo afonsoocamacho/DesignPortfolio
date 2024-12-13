@@ -1,0 +1,305 @@
+/* Global styles that apply to the entire application. */
+/* This file is automatically included in the main layout file. */
+/* ---------------------------------- */
+
+/* Reset default browser styles */
+
+/* Box sizing rules */
+/* Applies `box-sizing: border-box` to all elements, pseudo-elements, 
+   and their `::before` and `::after` pseudo-elements. 
+   This ensures padding and border are included in the element's total width and height. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+/* Disables automatic text size adjustments in browsers like Firefox and WebKit-based browsers (e.g., Safari and Chrome).
+      This ensures text sizes remain consistent across devices. */
+html {
+    -moz-text-size-adjust: none; /* Firefox-specific */
+    -webkit-text-size-adjust: none; /* WebKit-specific */
+    text-size-adjust: none; /* General property */
+}
+
+/* Remove default margin */
+/* Removes default bottom margin from body, headings, paragraphs, figures, blockquotes, 
+      description lists, and description terms to allow for precise control using custom styles. */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0; /* Reset the bottom margin */
+}
+
+/* Remove list styles */
+/* Removes bullet points and numbering for `ul` and `ol` elements that explicitly use the `role='list'` attribute. 
+      This ensures no default styling is applied if the developer intends custom styles. */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none; /* Removes default list indicators */
+}
+
+/* Set core body defaults */
+/* Ensures the body occupies at least the full height of the viewport (`100vh`).
+      Sets a default line height of `1.5` for better text readability. */
+body {
+    min-height: 100vh; /* Full viewport height */
+    line-height: 1.5; /* Comfortable text spacing */
+}
+
+/* Set shorter line heights */
+/* Adjusts the line height for headings and interactive elements to make them more compact and visually distinct. */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1; /* Compact line spacing */
+}
+
+/* Balance text wrapping */
+/* Enables balanced wrapping for headings to make them visually more even and consistent in layout. */
+h1,
+h2,
+h3,
+h4 {
+    overflow-wrap: break-word; /* Balances text wrapping */
+}
+
+/* Default styles for links */
+/* Unstyled anchor (`<a>`) elements without a class get basic styles: 
+      - `text-decoration-skip-ink: auto` ensures underlines skip through descenders (like 'g' or 'y') for a cleaner look.
+      - `color: currentColor` matches the current text color for consistency. */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Improve image handling */
+/* Ensures images and `<picture>` elements:
+      - Do not exceed their container width.
+      - Use block layout by default (avoiding inline spacing issues). */
+img,
+picture {
+    max-width: 100%; /* Constrains to container width */
+    display: block; /* Removes inline behavior */
+}
+
+/* Inherit fonts for form controls */
+/* Ensures buttons, inputs, textareas, and select elements inherit 
+      the font family and size of their parent, making them consistent with the surrounding text. */
+input,
+button,
+textarea,
+select {
+    font-family: inherit; /* Use parent font */
+    font-size: inherit; /* Use parent font size */
+}
+
+/* Ensure reasonable height for textareas */
+/* Sets a minimum height for `<textarea>` elements that don't have the `rows` attribute,
+      preventing them from being too small. */
+textarea:not([rows]) {
+    min-height: 10em; /* Minimum height of 10 lines */
+}
+
+/* Add scroll margin for anchored elements */
+/* Adds extra margin at the top of the viewport when navigating to an element via an anchor link (e.g., `#section`). */
+:target {
+    scroll-margin-block: 5ex; /* Adds spacing for better visibility */
+}
+
+/* Resets the default margin and padding on the body element to ensure consistent spacing across browsers. */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-primary);
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* ---------------------------------- */
+
+/* Setting Variables */
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --font-family-primary: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ---------------------------------- */
+
+/* Font Imports */
+/* Ultra Light */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Ultra Light Italic */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Thin */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 250;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thin Italic */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 250;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light Italic */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium Italic */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Condensed Bold */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 750; /* Use 750 for condensed bold to distinguish */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Condensed Black */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeue.woff2") format("woff2");
+    font-weight: 850; /* Use 850 for condensed black to distinguish */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Heavy */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeueHeavy.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Heavy Italic */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeueHeavyItalic.otf") format("opentype");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeueBlack.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black Italic */
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/assets/fonts/HelveticaNeueBlackItalic.otf") format("opentype");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
