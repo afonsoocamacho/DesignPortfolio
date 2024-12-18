@@ -11,7 +11,10 @@
 *,
 *::before,
 *::after {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
     box-sizing: border-box;
+    cursor: none;
 }
 
 /* Prevent font size inflation */
@@ -122,11 +125,16 @@ textarea:not([rows]) {
 /* Resets the default margin and padding on the body element to ensure consistent spacing across browsers. */
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family-primary);
-    background-color: var(--white);
-    color: var(--black);
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: var(--font-family-primary); /* Set the default font family */
+    background-color: var(--white); /* Set the default background color */
+    color: var(--black); /* Set the default text color */
+    cursor: none; /* Hide the default cursor */
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* ---------------------------------- */
@@ -302,4 +310,191 @@ body {
     font-weight: 900;
     font-style: italic;
     font-display: swap;
+}
+
+.big {
+    line-height: 0.8;
+    font-weight: 700;
+}
+.image-entrance {
+    background-image: url("/assets/images/entrace.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Creates the parallax effect */
+    height: 100vh;
+    margin-top: 1rem;
+}
+
+.custom-cursor {
+    position: fixed; /* Make it follow the mouse */
+    top: 0; /* Position it at the top */
+    left: 0; /* Position it at the left */
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    background-color: white; /* Adjust color */
+    border-radius: 50%; /* Make it a circle */
+    pointer-events: none; /* Ensure it doesn't interfere with clicking */
+    z-index: 1000; /* Place it above everything */
+    transform: translate(-50%, -50%); /* Center the circle on the cursor */
+    transition: transform 0.1s ease-in-out; /* Add smooth transitions */
+    mix-blend-mode: difference; /* Make it visible on any background */
+    transform-origin: center; /* Ensures scaling is from the center */
+}
+
+nav {
+    display: flex; /* Arrange items in a row */
+    position: sticky; /* Make it stick to the top */
+    top: 0; /* Position it at the top */
+    width: 100%;
+    color: black;
+    text-align: center;
+    transition: height 0.3s ease, line-height 0.3s ease;
+    height: 164px; /* Initial height */
+    background-color: white; /* Adjust color */
+    z-index: 999; /* Place it above everything */
+    align-items: center;
+    justify-content: center;
+
+    ul {
+        display: flex; /* Arrange items in a row */
+        list-style: none; /* Remove default list styles */
+    }
+    a {
+        text-decoration: none; /* Remove default underline */
+        color: black; /* Adjust color */
+        p {
+            margin: 0;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1;
+        }
+    }
+    .menu {
+        list-style: none;
+        display: flex;
+        opacity: 0; /* Hide menu by default */
+        visibility: hidden; /* Hide menu by default */
+        flex-direction: column;
+        gap: 10px;
+        background-color: white;
+        position: absolute;
+        top: 100%; /* Below the navbar */
+        left: 0;
+        height: calc(100vh - 80px); /* Full height */
+        width: 100%; /* Full width dropdown */
+        padding: 20px 0;
+        /* border-top: 1px solid #ccc; */
+        text-align: center;
+        justify-content: center;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+
+        li {
+            margin-bottom: 48px;
+            a {
+                font-size: 36px;
+                font-weight: 700;
+                line-height: 1;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .menu.active {
+        display: flex;
+        opacity: 1; /* Show menu */
+        visibility: visible; /* Show menu */
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 23px;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        height: 4px;
+        width: 100%;
+        background-color: black;
+        transition: all 0.3s ease;
+    }
+
+    /* Hamburger animation for "X" */
+    .hamburger-menu.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 8px);
+        transform-origin: center;
+    }
+
+    .hamburger-menu.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -8px);
+        transform-origin: center;
+    }
+
+    /* Adjustments when navbar is at the top */
+    nav.at-top {
+        justify-content: center;
+    }
+
+    nav.at-top .logo-link {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    nav.at-top .hamburger-menu {
+        left: 20px; /* Align hamburger to the left */
+    }
+}
+
+main {
+    background-color: turquoise;
+    height: calc(100vh - 80px); /* Make it full height */
+}
+/*--- projects---*/
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    padding-top: 0;
+    height: calc(100vh - 80px);
+    .project {
+        background-color: var(--black);
+        color: var(--white);
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .project:hover {
+        background-color: var(--white);
+        color: var(--black);
+    }
 }
