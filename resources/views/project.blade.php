@@ -40,15 +40,19 @@
     <section class="project">
         <div class="project-title">
             <h1>Pink October</h1>
-            <p>Branding</p>
-            <p>about</p>
-            <p>description</p>
-
-            <div class="softwares used"> 
+            
+            <div class="softwares-used"> 
                 <p>Illustrator</p>
                 <p>Photoshop</p>
                 <p>Blender</p>
             </div>
+
+            <p>about</p>
+            <p>description</p>
+
+            <p class="type">Branding</p>
+
+            
         </div>
         <div class="project-images">
             <div class="project-image">
