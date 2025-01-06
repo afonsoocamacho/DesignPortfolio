@@ -14,6 +14,12 @@ Route::get('/projects', function () {
     return view('projects');
 });
 
+Route::get('/project', function () {
+    return view('project');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
+
+

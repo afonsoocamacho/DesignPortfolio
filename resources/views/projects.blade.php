@@ -37,12 +37,13 @@
 
     <x-nav-bar></x-nav-bar>
 
-    <div class="projects">
-      <div class="project">Graphic Design</div>
-      <div class="project">test1</div>
-      <div class="project">test2</div>
-      <div class="project">test3</div>
+    <div class="projects-types">
+      <div class="project-type" data-bg="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" data-id="1"><p class="project-type-title">BRAN<wbr>DING</p></div>
+      <div class="project-type" data-bg="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"><p class="project-type-title">UI</br>UX</p></div>
+      <div class="project-type" data-bg="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"><p class="project-type-title">GRA&shy;PHIC</p></div>
+      <div class="project-type" data-bg="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"><p class="project-type-title">PRO&shy;DUCT</p></div>
     </div>
+
   <!-- Scripts -->
   <script src="{{ asset('js/fitText.js') }}"></script>
 </body>

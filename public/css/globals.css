@@ -477,24 +477,65 @@ main {
     height: calc(100vh - 80px); /* Make it full height */
 }
 /*--- projects---*/
-.projects {
+.projects-types {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
     gap: 10px;
     padding: 10px;
     padding-top: 0;
-    height: calc(100vh - 80px);
-    .project {
-        background-color: var(--black);
-        color: var(--white);
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        text-align: center;
-        transition: background-color 0.3s ease, color 0.3s ease;
+    height: calc(100vh - 80px); /* Grid container height */
+}
+
+.project-type {
+    background-color: var(--black);
+    color: var(--white);
+    display: flex;
+    justify-content: flex-start; /* Align text to the left */
+    align-items: center; /* Vertically align text within the padded area */
+    text-align: left;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    overflow: hidden; /* Prevent content overflow */
+    padding: 10px; /* Consistent padding */
+    box-sizing: border-box; /* Include padding in element's dimensions */
+}
+
+.project-type:hover {
+    color: var(--black);
+    background-color: var(--white);
+}
+.project-type-title {
+    font-weight: 700;
+    margin: 0; /* Remove margins for better control */
+    line-height: 0.75; /* Your desired line height */
+    text-align: left;
+    white-space: normal; /* Allow text wrapping */
+    overflow: hidden; /* Ensure content stays within bounds */
+    word-break: break-word; /* Break words if too long */
+    hyphens: auto; /* Enable hyphenation */
+    display: block; /* Ensure block-level behavior */
+    width: 100%; /* Ensure title spans the available space */
+    height: 100%; /* Helps to maintain alignment */
+}
+
+/*--- project---*/
+.project {
+    max-height: 300vh !important;
+    display: flex;
+}
+.project-title {
+    width: 50%;
+}
+.project-images {
+    width: 50%;
+}
+.project-image {
+    height: 100vh;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
-    .project:hover {
-        background-color: var(--white);
-        color: var(--black);
-    }
+}
+.scrollmagic-pin-spacer {
+    padding-bottom: 0 !important;
 }

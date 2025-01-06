@@ -172,3 +172,99 @@ document.addEventListener("DOMContentLoaded", function () {
 
     localStorage.setItem(lastVisitKey, now);
 });
+
+// fit to parent for the projects
+function fitTextToParent(className, maxFontSize = 1000, minFontSize = 1) {
+    const elements = document.querySelectorAll(`.${className}`);
+
+    function adjustFontSize(element) {
+        const parent = element.parentElement;
+
+        let fontSize = minFontSize;
+        element.style.fontSize = `${fontSize}px`;
+        element.style.lineHeight = "0.75"; // Maintain desired line-height
+
+        // Increase font size until it overflows
+        while (
+            element.scrollWidth <=
+                parent.clientWidth -
+                    parseFloat(getComputedStyle(parent).paddingLeft) -
+                    parseFloat(getComputedStyle(parent).paddingRight) &&
+            element.scrollHeight <=
+                parent.clientHeight -
+                    parseFloat(getComputedStyle(parent).paddingTop) -
+                    parseFloat(getComputedStyle(parent).paddingBottom) &&
+            fontSize < maxFontSize
+        ) {
+            fontSize += 1;
+            element.style.fontSize = `${fontSize}px`;
+        }
+
+        // Reduce font size if it overflows
+        while (
+            element.scrollWidth >
+                parent.clientWidth -
+                    parseFloat(getComputedStyle(parent).paddingLeft) -
+                    parseFloat(getComputedStyle(parent).paddingRight) ||
+            element.scrollHeight >
+                parent.clientHeight -
+                    parseFloat(getComputedStyle(parent).paddingTop) -
+                    parseFloat(getComputedStyle(parent).paddingBottom)
+        ) {
+            fontSize -= 1;
+            element.style.fontSize = `${fontSize}px`;
+            if (fontSize <= minFontSize) break; // Prevent infinite loop
+        }
+
+        // Ensure the element is aligned within the parent
+        element.style.width = "100%";
+        element.style.height = "100%";
+    }
+
+    // Apply initial adjustments to all elements
+    elements.forEach((element) => adjustFontSize(element));
+
+    // Recalculate on window resize
+    window.addEventListener("resize", () => {
+        elements.forEach((element) => adjustFontSize(element));
+    });
+}
+
+// Apply to project type titles
+fitTextToParent("project-type-title", 1000); // Max font size
+
+/*
+document.querySelectorAll(".project").forEach((project) => {
+    // Mouse enter event to change background
+    project.addEventListener("mouseenter", () => {
+        const bgImage = project.getAttribute("data-bg");
+        project.style.backgroundImage = `linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(${bgImage})`;
+        project.style.backgroundSize = "cover";
+        project.style.backgroundPosition = "center";
+    });
+
+    // Mouse leave event to reset background
+    project.addEventListener("mouseleave", () => {
+        project.style.backgroundImage = ""; // Reset to no image or default
+    });
+});
+*/
+
+// function to handle the project split scroll
+function splitScroll() {
+    const controller = new ScrollMagic.Controller();
+
+    const navHeight = 80; // Height of your sticky navbar
+    const triggerHookValue = navHeight / window.innerHeight;
+
+    new ScrollMagic.Scene({
+        duration: "300%",
+        triggerElement: ".project-title",
+        triggerHook: triggerHookValue, // Dynamic adjustment
+    })
+        .setPin(".project-title")
+        //.addIndicators()
+        .addTo(controller);
+}
+
+splitScroll();
