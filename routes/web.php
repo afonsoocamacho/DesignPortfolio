@@ -10,6 +10,10 @@ Route::get('/about-me', function () {
     return view('about');
 });
 
+Route::get('/projects-type', function () {
+    return view('projectstype');
+});
+
 Route::get('/projects', function () {
     return view('projects');
 });

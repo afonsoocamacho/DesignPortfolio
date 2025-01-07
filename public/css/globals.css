@@ -315,6 +315,7 @@ html {
 .big {
     line-height: 0.8;
     font-weight: 700;
+    background-color: white;
 }
 .image-entrance {
     background-image: url("/assets/images/entrace.png");
@@ -324,6 +325,7 @@ html {
     background-attachment: fixed; /* Creates the parallax effect */
     height: 100vh;
     margin-top: 1rem;
+    background-color: white;
 }
 
 .custom-cursor {
@@ -559,4 +561,94 @@ main {
 }
 .scrollmagic-pin-spacer {
     padding-bottom: 0 !important;
+}
+
+/*--projects--*/
+
+.projects {
+    background-color: white;
+    color: black;
+    min-width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    .type {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        margin-left: 20px;
+    }
+
+    .names-of-projects {
+        border-bottom: #000 solid 1px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        .name-of-projects {
+            width: 100%;
+            font-size: 108px;
+            font-weight: 400;
+            line-height: 1;
+            padding: 50px 0;
+            border-top: #000 solid 1px;
+
+            p {
+                transform: scale(1);
+                transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+            }
+        }
+        .name-of-projects:hover p {
+            transform: scale(1.05);
+        }
+    }
+}
+
+/*--footer--*/
+.pre-footer {
+    height: 35vh;
+    pointer-events: none;
+    opacity: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+    background-color: black;
+    height: 35vh;
+    width: 100%;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    padding: 50px;
+    ul {
+        list-style: none;
+        text-align: left;
+        li {
+            font-weight: 500;
+            margin: 10px 0;
+        }
+    }
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    .footer-p1 {
+        height: 25vh;
+    }
+    .footer-p2 {
+        display: flex;
+        justify-content: space-between;
+
+        .copywrite {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
 }

@@ -73,14 +73,16 @@ window.addEventListener("load", () => {
 });
 
 // Shrink the cursor on hover for links and buttons
-document.querySelectorAll("a, button, .hamburger-menu").forEach((element) => {
-    element.addEventListener("mouseenter", () => {
-        customCursor.style.transform = "translate(-50%, -50%) scale(0.6)"; // Shrink the cursor
+document
+    .querySelectorAll("a, button, .hamburger-menu, .name-of-projects")
+    .forEach((element) => {
+        element.addEventListener("mouseenter", () => {
+            customCursor.style.transform = "translate(-50%, -50%) scale(0.6)"; // Shrink the cursor
+        });
+        element.addEventListener("mouseleave", () => {
+            customCursor.style.transform = "translate(-50%, -50%) scale(1)"; // Restore the size
+        });
     });
-    element.addEventListener("mouseleave", () => {
-        customCursor.style.transform = "translate(-50%, -50%) scale(1)"; // Restore the size
-    });
-});
 
 // sticky navbar
 document.addEventListener("scroll", () => {

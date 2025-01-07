@@ -37,38 +37,12 @@
 
     <x-nav-bar></x-nav-bar>
 
-    <div class="projects">
-        <div class="type">
-            <h1>Branding</h1>
-        </div>
-        <div class="names-of-projects">
-            <div class="name-of-projects">
-                <p>Pink October</p>
-            </div>
-            <div class="name-of-projects">
-                <p>Pink October</p>
-            </div>
-            <div class="name-of-projects">
-                <p>Pink October</p>
-            </div>
-        </div>
+    <div class="projects-types">
+      <div class="project-type" data-bg="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" data-id="1"><p class="project-type-title">BRAN<wbr>DING</p></div>
+      <div class="project-type" data-bg="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"><p class="project-type-title">UI</br>UX</p></div>
+      <div class="project-type" data-bg="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"><p class="project-type-title">GRA&shy;PHIC</p></div>
+      <div class="project-type" data-bg="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"><p class="project-type-title">PRO&shy;DUCT</p></div>
     </div>
-
-    <div class="pre-footer"></div>
-
-    
-    <footer class="footer">
-        <div class="footer-p1"><ul>
-            <li><a href="www.google.pt">Home</a></li>
-            <li>About Me</li>
-            <li>Projects</li>
-            <li>Contact</li>
-        </ul></div>
-        <div class="footer-p2">
-            <p>(AFONSO CAMACHO)</p>
-            <p class="copywrite">Afonso Camacho © {{ date('Y') }} </p>
-        </div>
-      </footer>
 
   <!-- Scripts -->
   <script src="{{ asset('js/fitText.js') }}"></script>
