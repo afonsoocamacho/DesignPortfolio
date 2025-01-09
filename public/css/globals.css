@@ -478,7 +478,7 @@ main {
     background-color: turquoise;
     height: calc(100vh - 80px); /* Make it full height */
 }
-/*--- projects---*/
+/*--- projects types---*/
 .projects-types {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
@@ -495,7 +495,7 @@ main {
     justify-content: flex-start; /* Align text to the left */
     align-items: center; /* Vertically align text within the padded area */
     text-align: left;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
     overflow: hidden; /* Prevent content overflow */
     padding: 10px; /* Consistent padding */
     box-sizing: border-box; /* Include padding in element's dimensions */
